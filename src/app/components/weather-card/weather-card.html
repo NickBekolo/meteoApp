@@ -1,17 +1,46 @@
-<div class="card">
+<div class="card" aria-live="polite">
   @if (isLoading()) {
-    <p class="loading">Chargement de la météo...</p>
-  } @else if (errorMessage()) {
-    <p class="error">{{ errorMessage() }}</p>
+    <div class="state loading">
+      <span class="spinner" aria-hidden="true"></span>
+      <p>Chargement de la météo...</p>
+    </div>
+  } @else if (errorMessage(); as message) {
+    <div class="state error" [class]="'error-' + errorKind()" role="alert">
+      <p>{{ message }}</p>
+    </div>
   } @else if (weather(); as w) {
-    <h2>{{ w.city }} ({{ w.country }})</h2>
-    <img [src]="'https://openweathermap.org/img/wn/' + w.icon + '@2x.png'" [alt]="w.description">
-    <p class="temp">{{ w.temp }}°C</p>
-    <p class="description">{{ w.description }}</p>
-    <p>Ressenti : {{ w.feelsLike }}°C</p>
-    <p>Humidité : {{ w.humidity }} %</p>
-    <p>Vent : {{ w.windSpeed }} km/h</p>
+    <div class="result">
+      <header class="result-header">
+        <h2>{{ w.city }} <span class="country">({{ w.country }})</span></h2>
+      </header>
+
+      <img
+        class="icon"
+        [src]="'https://openweathermap.org/img/wn/' + w.icon + '@2x.png'"
+        [alt]="w.description"
+        width="80"
+        height="80"
+      />
+
+      <p class="temp">{{ w.temp }}°C</p>
+      <p class="description">{{ w.description }}</p>
+
+      <dl class="details">
+        <div class="detail">
+          <dt>Ressenti</dt>
+          <dd>{{ w.feelsLike }}°C</dd>
+        </div>
+        <div class="detail">
+          <dt>Humidité</dt>
+          <dd>{{ w.humidity }} %</dd>
+        </div>
+        <div class="detail">
+          <dt>Vent</dt>
+          <dd>{{ w.windSpeed }} km/h</dd>
+        </div>
+      </dl>
+    </div>
   } @else {
-    <p>Recherchez une ville pour voir la météo.</p>
+    <p class="empty">Recherchez une ville pour voir la météo.</p>
   }
 </div>

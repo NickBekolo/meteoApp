@@ -4,10 +4,116 @@
   padding: 1.5rem;
   text-align: center;
   background: var(--surface-light, #f8fafc);
+  min-height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.placeholder .todo {
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.empty {
   color: var(--text-muted, #6b7280);
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
+  margin: 0;
+}
+
+/* --- Chargement --- */
+.spinner {
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 3px solid var(--border, #e2e8f0);
+  border-top-color: var(--accent, #2563eb);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Erreurs (différenciées visuellement selon le cas) --- */
+.error p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.error-not-found p {
+  color: var(--warning, #b45309);
+}
+
+.error-rate-limit p {
+  color: var(--warning, #b45309);
+}
+
+.error-generic p {
+  color: var(--danger, #dc2626);
+}
+
+/* --- Résultat --- */
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.result-header h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+}
+
+.country {
+  font-weight: 400;
+  color: var(--text-muted, #6b7280);
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+}
+
+.temp {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.description {
+  margin: 0 0 0.75rem;
+  text-transform: capitalize;
+  color: var(--text-muted, #6b7280);
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+  margin: 0;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.detail dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted, #6b7280);
+}
+
+.detail dd {
+  margin: 0;
+  font-weight: 600;
 }

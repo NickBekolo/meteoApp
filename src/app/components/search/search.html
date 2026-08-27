@@ -1,9 +1,20 @@
-<!-- STUB de recherche — à remplacer par un Reactive Form (voir search.ts) -->
-<form class="search" (submit)="$event.preventDefault(); submit(cityInput.value)">
+<form class="search" [formGroup]="form" (ngSubmit)="submit()" novalidate>
   <label for="city">Rechercher une ville</label>
   <div class="row">
-    <input #cityInput id="city" type="text" placeholder="Paris" autocomplete="off" />
+    <input
+      id="city"
+      type="text"
+      formControlName="city"
+      placeholder="Paris"
+      autocomplete="off"
+      [class.invalid]="showError"
+      [attr.aria-invalid]="showError"
+      aria-describedby="city-error"
+    />
     <button type="submit">Rechercher</button>
   </div>
-  <!-- TODO (membre recherche) : validation + message "Veuillez saisir une ville." -->
+
+  @if (showError) {
+    <p id="city-error" class="error" role="alert">Veuillez saisir une ville.</p>
+  }
 </form>
