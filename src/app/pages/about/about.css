@@ -1,0 +1,43 @@
+.about {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.intro {
+  color: var(--text-muted, #4b5563);
+  line-height: 1.6;
+}
+
+.members,
+.tech {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.members li {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.member-name {
+  font-weight: 600;
+}
+
+.member-role {
+  font-size: 0.9rem;
+  color: var(--text-muted, #6b7280);
+}
+
+.tech li {
+  padding: 0.35rem 0;
+  line-height: 1.5;
+}

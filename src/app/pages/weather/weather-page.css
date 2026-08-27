@@ -1,0 +1,15 @@
+.weather-page {
+  max-width: 480px;
+  margin: 1rem auto 0;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--accent, #2563eb);
+  text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: underline;
+}

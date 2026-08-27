@@ -1,0 +1,9 @@
+<!-- STUB de recherche — à remplacer par un Reactive Form (voir search.ts) -->
+<form class="search" (submit)="$event.preventDefault(); submit(cityInput.value)">
+  <label for="city">Rechercher une ville</label>
+  <div class="row">
+    <input #cityInput id="city" type="text" placeholder="Paris" autocomplete="off" />
+    <button type="submit">Rechercher</button>
+  </div>
+  <!-- TODO (membre recherche) : validation + message "Veuillez saisir une ville." -->
+</form>

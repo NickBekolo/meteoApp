@@ -1,0 +1,13 @@
+.card {
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  background: var(--surface-light, #f8fafc);
+}
+
+.placeholder .todo {
+  color: var(--text-muted, #6b7280);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
