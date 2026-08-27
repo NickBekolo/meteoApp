@@ -1,5 +1,17 @@
-<!-- STUB d'affichage — à remplacer (voir weather-card.ts) -->
-<div class="card placeholder">
-  <p>Météo demandée pour : <strong>{{ city() || '—' }}</strong></p>
-  <p class="todo">🔧 Affichage météo à implémenter (service + card).</p>
+<div class="card">
+  @if (isLoading()) {
+    <p class="loading">Chargement de la météo...</p>
+  } @else if (errorMessage()) {
+    <p class="error">{{ errorMessage() }}</p>
+  } @else if (weather(); as w) {
+    <h2>{{ w.city }} ({{ w.country }})</h2>
+    <img [src]="'https://openweathermap.org/img/wn/' + w.icon + '@2x.png'" [alt]="w.description">
+    <p class="temp">{{ w.temp }}°C</p>
+    <p class="description">{{ w.description }}</p>
+    <p>Ressenti : {{ w.feelsLike }}°C</p>
+    <p>Humidité : {{ w.humidity }} %</p>
+    <p>Vent : {{ w.windSpeed }} km/h</p>
+  } @else {
+    <p>Recherchez une ville pour voir la météo.</p>
+  }
 </div>
