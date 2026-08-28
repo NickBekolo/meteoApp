@@ -1,0 +1,10 @@
+<section class="home">
+  <h1>Quelle météo aujourd'hui ?</h1>
+  <p class="lead">
+    Recherchez une ville pour consulter sa météo en temps réel,
+    fournie par l'API OpenWeather.
+  </p>
+
+  <!-- Le composant de recherche émet la ville ; la page navigue vers /weather/:city -->
+  <app-search (searchCity)="onSearch($event)" />
+</section>

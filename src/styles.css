@@ -1,0 +1,32 @@
+/* Styles globaux + variables de thème partagées (design libre, à enrichir). */
+:root {
+  --surface: #10233f;
+  --surface-light: #f8fafc;
+  --border: #e2e8f0;
+  --text: #1f2937;
+  --text-muted: #4b5563;
+  --accent: #2563eb;
+  --accent-dark: #1d4ed8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: #ffffff;
+  line-height: 1.5;
+}
+
+h1,
+h2 {
+  color: var(--text);
+}

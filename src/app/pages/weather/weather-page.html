@@ -1,0 +1,6 @@
+<section class="weather-page">
+  <a routerLink="/home" class="back">← Nouvelle recherche</a>
+
+  <!-- La ville vient du paramètre de route ; l'affichage est délégué à la card. -->
+  <app-weather-card [city]="city()" />
+</section>

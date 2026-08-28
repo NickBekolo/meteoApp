@@ -1,0 +1,15 @@
+.home {
+  max-width: 640px;
+  margin: 2rem auto 0;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+}
+
+.lead {
+  color: var(--text-muted, #4b5563);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
