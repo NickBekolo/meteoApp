@@ -12,7 +12,71 @@ h1 {
 }
 
 .lead {
-  color: var(--text-muted, #4b5563);
+  color: var(--text-muted, #9a9aa2);
   margin-bottom: 2rem;
   line-height: 1.6;
+}
+
+/* --- Favoris --- */
+.favorites {
+  margin-top: 2.5rem;
+  text-align: left;
+}
+
+.fav-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+}
+
+.fav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fav-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.5rem 0.4rem 0.9rem;
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.12));
+  border-radius: 999px;
+  background: var(--surface, rgba(20, 20, 22, 0.72));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: var(--text, #f5f5f7);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.fav-chip:hover {
+  border-color: var(--accent, #0a84ff);
+}
+
+.fav-name {
+  font-weight: 600;
+}
+
+.fav-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted, #9a9aa2);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.fav-remove:hover {
+  color: var(--accent, #0a84ff);
+  background: rgba(127, 127, 127, 0.18);
 }

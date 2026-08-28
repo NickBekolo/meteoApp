@@ -1,0 +1,70 @@
+.forecast {
+  margin-top: 1.25rem;
+}
+
+.title {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.muted {
+  margin-top: 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.day-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.day-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.day-temps {
+  display: flex;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.day-temps .min {
+  color: var(--text-muted);
+}
+
+/* Sur mobile : défilement horizontal plutôt que 5 colonnes serrées. */
+@media (max-width: 480px) {
+  .days {
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    grid-auto-columns: 4.5rem;
+    overflow-x: auto;
+  }
+}

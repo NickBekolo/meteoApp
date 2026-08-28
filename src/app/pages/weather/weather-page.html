@@ -1,6 +1,19 @@
 <section class="weather-page">
-  <a routerLink="/home" class="back">← Nouvelle recherche</a>
+  <div class="top">
+    <a routerLink="/home" class="back">← Nouvelle recherche</a>
 
-  <!-- La ville vient du paramètre de route ; l'affichage est délégué à la card. -->
+    <button
+      type="button"
+      class="fav-btn"
+      [class.active]="isFavorite()"
+      [attr.aria-pressed]="isFavorite()"
+      (click)="toggleFavorite()"
+    >
+      {{ isFavorite() ? '★ Favori' : '☆ Ajouter aux favoris' }}
+    </button>
+  </div>
+
+  <!-- La ville vient du paramètre de route ; l'affichage est délégué aux composants. -->
   <app-weather-card [city]="city()" />
+  <app-forecast [city]="city()" />
 </section>

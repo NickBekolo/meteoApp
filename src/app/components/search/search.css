@@ -15,7 +15,8 @@
   position: relative;
   border-radius: 20px;
   border: 1px solid var(--meteo-border);
-  background: var(--meteo-bg);
+  /* Dégradé de secours visible si la vidéo ne joue pas. */
+  background: linear-gradient(160deg, #0b1a2f 0%, #000000 70%);
   overflow: hidden;
 }
 
@@ -33,13 +34,6 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
   z-index: 1;
-}
-
-/* Respecte les préférences d'accessibilité : pas d'animation forcée. */
-@media (prefers-reduced-motion: reduce) {
-  .bg-video {
-    display: none;
-  }
 }
 
 .search {
