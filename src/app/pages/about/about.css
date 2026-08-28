@@ -8,15 +8,66 @@ h1 {
 }
 
 .intro {
-  color: var(--text-muted, #4b5563);
+  color: var(--text-muted, #9a9aa2);
   line-height: 1.6;
 }
 
-.members,
-.tech {
+/* --- Chevron partagé pour les <summary> --- */
+summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: auto;
+  border-right: 2px solid var(--text-muted, #9a9aa2);
+  border-bottom: 2px solid var(--text-muted, #9a9aa2);
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+details[open] > summary::after {
+  transform: rotate(-135deg);
+}
+
+/* --- Contributeurs : bouton "Détails" qui déroule la liste --- */
+.disclosure {
+  margin-bottom: 1.5rem;
+}
+
+.disclosure > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.12));
+  border-radius: 999px;
+  background: var(--surface, rgba(20, 20, 22, 0.72));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: background 0.15s;
+}
+
+.disclosure > summary:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.disclosure[open] > summary {
+  margin-bottom: 0.75rem;
+}
+
+.members {
   list-style: none;
   padding: 0;
-  margin: 0 0 1.5rem;
+  margin: 0;
 }
 
 .members li {
@@ -37,25 +88,38 @@ h1 {
 
 .member-role {
   font-size: 0.9rem;
-  color: var(--text-muted, #6b7280);
+  color: var(--text-muted, #9a9aa2);
 }
 
+/* --- Technologies : cartes dépliables (bouton Détails par techno) --- */
 .tech {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 0.6rem;
 }
 
-.tech li {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  padding: 0.85rem 1rem;
+.tech details {
   border: 1px solid var(--border, rgba(255, 255, 255, 0.12));
   border-radius: 14px;
   background: var(--surface, rgba(20, 20, 22, 0.72));
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.tech summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  transition: background 0.15s;
+}
+
+.tech summary:hover {
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .tech-name {
@@ -63,7 +127,9 @@ h1 {
 }
 
 .tech-usage {
-  font-size: 0.85rem;
+  margin: 0;
+  padding: 0 1rem 0.85rem;
   color: var(--text-muted, #9a9aa2);
+  font-size: 0.85rem;
   line-height: 1.4;
 }

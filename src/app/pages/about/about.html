@@ -8,22 +8,27 @@
     « Angular et communication vers une API ».
   </p>
 
-  <h2>Membres du groupe</h2>
-  <ul class="members">
-    @for (member of members; track member.name) {
-      <li>
-        <span class="member-name">{{ member.name }}</span>
-        <span class="member-role">{{ member.role }}</span>
-      </li>
-    }
-  </ul>
+  <h2>Contributeurs</h2>
+  <details class="disclosure">
+    <summary>Détails</summary>
+    <ul class="members">
+      @for (member of members; track member.name) {
+        <li>
+          <span class="member-name">{{ member.name }}</span>
+          <span class="member-role">{{ member.role }}</span>
+        </li>
+      }
+    </ul>
+  </details>
 
   <h2>Technologies utilisées</h2>
   <ul class="tech">
     @for (tech of technologies; track tech.name) {
       <li>
-        <span class="tech-name">{{ tech.name }}</span>
-        <span class="tech-usage">{{ tech.usage }}</span>
+        <details>
+          <summary><span class="tech-name">{{ tech.name }}</span></summary>
+          <p class="tech-usage">{{ tech.usage }}</p>
+        </details>
       </li>
     }
   </ul>
