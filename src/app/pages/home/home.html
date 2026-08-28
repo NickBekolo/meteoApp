@@ -6,4 +6,25 @@
 
   <!-- Le composant de recherche émet la ville ; la page navigue vers /weather/:city -->
   <app-search (searchCity)="onSearch($event)" />
+
+  @if (favorites().length) {
+    <div class="favorites">
+      <h2 class="fav-title">Favoris</h2>
+      <ul class="fav-list">
+        @for (city of favorites(); track city) {
+          <li>
+            <span class="fav-chip" (click)="openCity(city)">
+              <span class="fav-name">{{ city }}</span>
+              <button
+                type="button"
+                class="fav-remove"
+                (click)="removeFavorite(city, $event)"
+                [attr.aria-label]="'Retirer ' + city + ' des favoris'"
+              >×</button>
+            </span>
+          </li>
+        }
+      </ul>
+    </div>
+  }
 </section>

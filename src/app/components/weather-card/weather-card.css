@@ -18,7 +18,8 @@
   border: 1px solid var(--meteo-border);
   border-radius: 24px;
   text-align: center;
-  background: var(--meteo-bg);
+  /* Dégradé de secours visible si la vidéo ne joue pas. */
+  background: linear-gradient(160deg, #0b1a2f 0%, #000000 70%);
   color: var(--meteo-text);
   min-height: 12rem;
   display: flex;
@@ -41,13 +42,6 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
   z-index: 1;
-}
-
-/* Respecte les préférences d'accessibilité : pas d'animation forcée. */
-@media (prefers-reduced-motion: reduce) {
-  .bg-video {
-    display: none;
-  }
 }
 
 .content {

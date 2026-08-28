@@ -1,0 +1,27 @@
+@if (isLoading()) {
+  <p class="muted">Chargement des prévisions...</p>
+} @else if (error()) {
+  <p class="muted">Prévisions indisponibles pour le moment.</p>
+} @else if (days(); as list) {
+  <section class="forecast">
+    <h3 class="title">Prévisions 5 jours</h3>
+    <ul class="days">
+      @for (day of list; track day.date) {
+        <li class="day">
+          <span class="day-label">{{ day.label }}</span>
+          <img
+            class="day-icon"
+            [src]="'https://openweathermap.org/img/wn/' + day.icon + '@2x.png'"
+            [alt]="day.description"
+            width="50"
+            height="50"
+          />
+          <span class="day-temps">
+            <strong>{{ day.tempMax }}°</strong>
+            <span class="min">{{ day.tempMin }}°</span>
+          </span>
+        </li>
+      }
+    </ul>
+  </section>
+}
