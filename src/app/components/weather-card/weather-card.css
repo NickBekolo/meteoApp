@@ -9,7 +9,7 @@
   --meteo-danger: #ff453a;
 
   display: block;
-  font-family: ui-rounded, 'Poppins', system-ui, -apple-system, sans-serif;
+  font-family: ui-rounded, 'SF Pro Rounded', 'Nunito', system-ui, -apple-system, sans-serif;
 }
 
 .card {
@@ -130,7 +130,7 @@
   font-weight: 800;
   line-height: 1;
   margin: 0.25rem 0;
-  font-family: ui-rounded, 'Poppins', system-ui, -apple-system, sans-serif;
+  font-family: ui-rounded, 'SF Pro Rounded', 'Nunito', system-ui, -apple-system, sans-serif;
 }
 
 .description {

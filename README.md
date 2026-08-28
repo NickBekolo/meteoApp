@@ -19,11 +19,11 @@ gestion des erreurs / du chargement.
 | Membre | Périmètre |
 | --- | --- |
 | **Nikola MILOSAVLJEVIC** | Setup, routing & architecture |
-| _Membre 2_ | Formulaire de recherche |
-| _Membre 3_ | Service météo & API OpenWeather |
-| _Membre 4_ | Affichage météo & fonctionnalité libre |
+| **Nick BEKOLO** | Service météo & API OpenWeather |
+| **Leroy MONTHE** | Formulaire de recherche |
+| **Rayan Degane** | Affichage météo & fonctionnalité libre |
 
-> _À compléter par l'équipe : noms des membres 2, 3 et 4._
+> _À vérifier : l'attribution des rôles de chaque membre._
 
 ## 🛠️ Technologies
 

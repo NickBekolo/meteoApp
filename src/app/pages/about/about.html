@@ -1,8 +1,8 @@
 <section class="about">
-  <h1>À propos de MétéoApp</h1>
+  <h1>À propos de météo</h1>
 
   <p class="intro">
-    MétéoApp est une application web développée avec Angular qui permet de
+    météo est une application web développée avec Angular qui permet de
     rechercher la météo actuelle d'une ville en interrogeant l'API REST
     OpenWeather. Ce projet a été réalisé en groupe dans le cadre du module
     « Angular et communication vers une API ».
@@ -22,7 +22,8 @@
   <ul class="tech">
     @for (tech of technologies; track tech.name) {
       <li>
-        <strong>{{ tech.name }}</strong> — {{ tech.usage }}
+        <span class="tech-name">{{ tech.name }}</span>
+        <span class="tech-usage">{{ tech.usage }}</span>
       </li>
     }
   </ul>

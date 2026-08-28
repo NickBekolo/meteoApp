@@ -21,12 +21,13 @@ interface Tech {
   styleUrl: './about.css',
 })
 export class About {
-  // TODO (équipe) : compléter les noms + rôles des 3 autres membres.
+  // TODO (équipe) : compléter les noms de famille tronqués (Leroy / Rayan)
+  // et vérifier l'attribution des rôles.
   members: Member[] = [
     { name: 'Nikola MILOSAVLJEVIC', role: 'Setup, routing & architecture' },
-    { name: 'Membre 2', role: 'Formulaire de recherche' },
-    { name: 'Membre 3', role: 'Service météo & API OpenWeather' },
-    { name: 'Membre 4', role: 'Affichage météo & fonctionnalité libre' },
+    { name: 'Nick BEKOLO', role: 'Service météo & API OpenWeather' },
+    { name: 'Leroy MONTHE', role: 'Formulaire de recherche' },
+    { name: 'Rayan Degane', role: 'Affichage météo & fonctionnalité libre' },
   ];
 
   technologies: Tech[] = [

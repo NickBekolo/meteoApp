@@ -22,10 +22,13 @@ h1 {
 .members li {
   display: flex;
   flex-direction: column;
-  padding: 0.6rem 0.9rem;
-  border: 1px solid var(--border, #e2e8f0);
-  border-radius: 8px;
-  margin-bottom: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.12));
+  border-radius: 14px;
+  margin-bottom: 0.6rem;
+  background: var(--surface, rgba(20, 20, 22, 0.72));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .member-name {
@@ -37,7 +40,30 @@ h1 {
   color: var(--text-muted, #6b7280);
 }
 
+.tech {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.6rem;
+}
+
 .tech li {
-  padding: 0.35rem 0;
-  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.12));
+  border-radius: 14px;
+  background: var(--surface, rgba(20, 20, 22, 0.72));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.tech-name {
+  font-weight: 700;
+}
+
+.tech-usage {
+  font-size: 0.85rem;
+  color: var(--text-muted, #9a9aa2);
+  line-height: 1.4;
 }
