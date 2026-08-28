@@ -13,9 +13,9 @@ import { About } from './pages/about/about';
  */
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: Home, title: 'Accueil — MétéoApp' },
-  { path: 'weather/:city', component: WeatherPage, title: 'Météo — MétéoApp' },
-  { path: 'about', component: About, title: 'À propos — MétéoApp' },
+  { path: 'home', component: Home, title: 'Accueil — météo' },
+  { path: 'weather/:city', component: WeatherPage, title: 'météo' },
+  { path: 'about', component: About, title: 'À propos — météo' },
   // Toute route inconnue renvoie vers l'accueil.
   { path: '**', redirectTo: 'home' },
 ];

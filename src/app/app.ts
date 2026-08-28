@@ -13,5 +13,5 @@ import { Navbar } from './components/navbar/navbar';
   styleUrl: './app.css',
 })
 export class App {
-  protected title = 'MétéoApp';
+  protected title = 'météo';
 }

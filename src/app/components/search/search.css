@@ -8,7 +8,7 @@
   --meteo-danger: #ff453a;
 
   display: block;
-  font-family: ui-rounded, 'Poppins', system-ui, -apple-system, sans-serif;
+  font-family: ui-rounded, 'SF Pro Rounded', 'Nunito', system-ui, -apple-system, sans-serif;
 }
 
 .search-shell {
